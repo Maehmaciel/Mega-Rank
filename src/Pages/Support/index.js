@@ -11,7 +11,7 @@ import Project from '../../Components/Project';
 import Header from '../../Components/Header';
 import { Redirect } from 'react-router-dom';
 
-function Support({ project, login }) {
+function Support({ history, project, login }) {
 
 
 
@@ -22,7 +22,7 @@ function Support({ project, login }) {
 			<Content>
 				{project &&
 					project.project.map(p => {
-						return <Project supportable={true} key={p.id}>{p}</Project>
+						return <Project history={history} supportable={true} key={p.id}>{p}</Project>
 					})
 
 				}

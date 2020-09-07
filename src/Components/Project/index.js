@@ -7,7 +7,7 @@ import { Container, ItemText, ItemTitle, SupportText } from './styles'
 import api from '../../services/api'
 import Support from '../../Pages/Support';
 
-const Project = ({ children, supportable, projectData, popupStatus }) => {
+const Project = ({ history, children, supportable, projectData, popupStatus }) => {
   async function support(id) {
     try {
       popupStatus({ name: 'notify', information: 'Bem vindo' })
@@ -18,8 +18,8 @@ const Project = ({ children, supportable, projectData, popupStatus }) => {
       projectData({
         project: data
       })
-      console.log(data)
 
+      history.pushState("/support")
 
     } catch (error) {
       console.log(error)
