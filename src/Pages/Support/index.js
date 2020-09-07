@@ -9,35 +9,33 @@ import { Container, Content } from './styles';
 
 import Project from '../../Components/Project';
 import Header from '../../Components/Header';
+import { Redirect } from 'react-router-dom';
 
-function Support({ project }) {
+function Support({ project, login }) {
 
 
 
 	return (
-		<Container>
+		<>{login.user.email ? (<Container>
 			<Header title="Apoie" />
 
 			<Content>
 				{project &&
 					project.project.map(p => {
-						return <Project key={p.id}>{p}</Project>
+						return <Project supportable={true} key={p.id}>{p}</Project>
 					})
 
 				}
-
-
-
 			</Content>
+		</Container>) : (<Redirect to="/login" />)}</>
 
-
-		</Container>
 	);
 }
 
 
 const mapStateToProps = state => ({
-	project: state.project
+	project: state.project,
+	login: state.login
 });
 
 const mapDispatchToProps = dispatch =>

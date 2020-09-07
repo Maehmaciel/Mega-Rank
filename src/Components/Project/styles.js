@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.button`
 	padding: 15px;
 	margin:10px;
 	font-size: 18px;
@@ -13,15 +13,35 @@ export const Container = styled.div`
 	height:400px;
 	display:flex;
 	flex-direction:column;
-	box-shadow: 0px 12px 20px -15px black;
+	
 	overflow:scroll;
-	 &:hover {
+	${(props) =>
+		props.support &&
+		css`
+		box-shadow: 0px 12px 20px -15px black;
+		 &:hover {
     box-shadow:none;
   }
+	`}
+	
 `;
 
 
+export const ItemTitle = styled.h2`
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 150%;
+	color: #545454;
 
+`;
+
+export const SupportText = styled.h3`
+	font-weight: 300;
+	font-size: 15px;
+	line-height: 150%;
+	color: #545454;
+
+`;
 
 export const ItemText = styled.p`
 	font-style: normal;

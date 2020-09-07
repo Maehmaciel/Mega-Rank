@@ -61,7 +61,7 @@ function Help() {
 
 
 const mapStateToProps = state => ({
-	project: state.project
+
 });
 
 const mapDispatchToProps = dispatch =>

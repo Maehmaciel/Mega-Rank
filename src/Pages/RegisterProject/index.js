@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
-import * as actions from '../../store/actions/popup';
+import * as actions from '../../store/actions/login';
 
 import { Container, Content } from './styles';
 
@@ -11,12 +11,13 @@ import { Container, Content } from './styles';
 
 import Register from '../../Components/Forms/newProject'
 import Header from '../../Components/Header';
+import { Redirect } from 'react-router-dom';
 
-function RegisterProjects({ history }) {
+function RegisterProjects({ history, login }) {
 
 
 	return (
-		<Container>
+		<>{login.user.email ? (<Container>
 			<Header title="Receba Apoio" />
 
 			<Content>
@@ -24,13 +25,15 @@ function RegisterProjects({ history }) {
 			</Content>
 
 
-		</Container>
+		</Container>) : (<Redirect to="/login" />)}</>
+
 	);
 
 }
 
 const mapStateToProps = state => ({
-	popup: state.popup
+	login: state.login,
+
 });
 
 const mapDispatchToProps = dispatch =>
