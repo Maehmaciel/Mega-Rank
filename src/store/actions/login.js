@@ -1,7 +1,8 @@
-export const loginSuccess = ({ token }) => ({
+export const loginSuccess = ({ token, user }) => ({
 	type: 'LOGIN_SUCCESS',
 	payload: {
 		token,
+		user
 
 	}
 })

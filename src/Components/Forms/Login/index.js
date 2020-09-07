@@ -28,9 +28,14 @@ const Login = ({ loginSuccess, popupStatus, history }) => {
 				return
 			}
 			console.log(data)
-			// popupStatus({ name: 'notify', information: 'Bem vindo' })
-			// loginSuccess(data)
-			// history.push('/')
+			const config = {
+				headers: { Authorization: `Bearer ${data.token}` }
+			};
+			const request = await api.get('/users', config)
+			const user = request.data
+			popupStatus({ name: 'notify', information: 'Bem vindo' })
+			loginSuccess({ token, user })
+			history.push('/')
 		} catch (error) {
 			console.log(error)
 			setError("Opa, ocorreu um erro na requisiçao, tente novamente mais tarde")
