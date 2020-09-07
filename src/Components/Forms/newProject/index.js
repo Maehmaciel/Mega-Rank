@@ -26,18 +26,11 @@ function Register({ history, loginSuccess, popupStatus }) {
 	const update = async (info) => {
 		setLoading(true)
 		try {
-			const response = await api.post('/user', info)
-			if (response.data.error) {
-				setError(response.data.error)
-				return
-			}
-			const { data } = await api.post('/auth', { email: info.email, password: info.password })
+			const { data } = await api.post('/projects', info)
 			if (data.error) {
 				setError(data.error)
 				return
 			}
-			popupStatus({ name: 'notify', information: 'Bem vindo' })
-			loginSuccess(data)
 			history.push('/')
 
 
@@ -61,7 +54,7 @@ function Register({ history, loginSuccess, popupStatus }) {
 					required />
 
 				<Input
-					name="info"
+					name="project"
 					placeholder="Fale de seu projeto para nós e possivéis apoiadores"
 					type="text"
 					required />

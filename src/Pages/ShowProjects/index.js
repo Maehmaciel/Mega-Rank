@@ -16,7 +16,7 @@ function ShowProjects({ project }) {
 
 	return (
 		<Container>
-			<Header />
+			<Header title="Projetos" />
 
 			<Content>
 				{project &&

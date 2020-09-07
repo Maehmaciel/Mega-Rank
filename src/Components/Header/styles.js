@@ -24,4 +24,11 @@ export const User = styled.span`
 	color:#FFF;
 	
 `;
+export const Title = styled.h1`
+
+	
+	color:#FFF;
+	
+`;
+
 

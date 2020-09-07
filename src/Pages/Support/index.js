@@ -16,7 +16,7 @@ function Support({ project }) {
 
 	return (
 		<Container>
-			<Header />
+			<Header title="Apoie" />
 
 			<Content>
 				{project &&
