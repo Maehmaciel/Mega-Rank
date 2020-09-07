@@ -10,12 +10,14 @@ import { Container, Content } from './styles';
 
 
 import Register from '../../Components/Forms/Register'
+import Header from '../../Components/Header';
 
 function RegisterPage({ history }) {
 
 
 	return (
 		<Container>
+			<Header />
 
 			<Content>
 				<Register history={history} />

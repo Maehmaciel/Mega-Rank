@@ -9,12 +9,14 @@ import { Container, Content } from './styles';
 
 
 import Login from '../../Components/Forms/Login'
+import Header from '../../Components/Header';
 
 function LoginPage({ history }) {
 
 
 	return (
 		<Container>
+			<Header />
 
 			<Content>
 				<Login history={history} />

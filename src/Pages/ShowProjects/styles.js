@@ -5,6 +5,7 @@ export const Container = styled.div`
 	background: #F1F3F6;
 	display:flex;
 	flex-direction:column;
+
 	
 `;
 export const Header = styled.header`
@@ -20,8 +21,8 @@ export const Header = styled.header`
 export const Content = styled.div`
 	flex:1;
 	display:flex;
+	flex-wrap:wrap;
 	justify-content:center;
-	align-items:center;
 `;
 export const Category = styled.div`
 	display:flex;
