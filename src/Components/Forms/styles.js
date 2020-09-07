@@ -1,4 +1,4 @@
-import styled,{css} from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Form } from '@unform/web';
 import { Link } from 'react-router-dom';
 
@@ -19,16 +19,11 @@ export const Container = styled.div`
 		padding: 20px;
 	}
 `;
-export const Content= styled.div`
 
-`;
-export const Box= styled.div`
-
-`;
-export const Forms= styled(Form)`
+export const Forms = styled(Form)`
 	${(props) =>
-    !props.islogin &&
-    css`
+		!props.islogin &&
+		css`
 		width: 384px;
 	`}
 	display: flex;

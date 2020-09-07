@@ -4,14 +4,20 @@ import { bindActionCreators } from "redux";
 
 import * as actions from '../../store/actions/popup';
 
-import { Container, Category, Header, Content } from './styles';
+import { Container, Category, Header, Content, Logo } from './styles';
 
 import Option from '../../Components/Option'
+import Link from '../../Components/Link'
+
+
 import api from '../../services/api';
+
+
 import community from '../../assets/svg/002-community.svg'
 import conversation from '../../assets/svg/003-conversation.svg'
 import registration from '../../assets/svg/004-registration.svg'
 import question from '../../assets/svg/005-question.svg'
+import logo from '../../assets/logo.png'
 
 class Home extends Component {
 	state = {
@@ -20,7 +26,7 @@ class Home extends Component {
 	componentDidMount = async () => {
 		try {
 			const { data } = await api.get('/home')
-			const { all, categories } = data.products
+
 
 			this.setState({
 				loading: false
@@ -36,21 +42,28 @@ class Home extends Component {
 	render() {
 		return (
 			<Container>
-				<Header>a</Header>
+				<Header>
+					<Logo src={logo} />
+					<div>
+						<Link to="/login" size="xsmall">Login</Link>
+						<Link to="/register" size="xsmall">Cadastro</Link>
+					</div>
+
+				</Header>
 				<Content>
 					<Category>
-						<Option name="Apoie" image={community}></Option>
+						<Option name="Apoie" to="/support" image={community}></Option>
 
-						<Option name="Conheça os projetos" image={conversation}></Option>
+						<Option name="Conheça os projetos" to="/projects" image={conversation}></Option>
 					</Category>
 					<Category>
-						<Option name="Cadastre um projeto" image={registration}></Option>
-						<Option name="Quero uma ajuda para começar" image={question}></Option>
+						<Option name="Cadastre um projeto" to="/newProject" image={registration}></Option>
+						<Option name="Quero uma ajuda para começar" to="/help" image={question}></Option>
 					</Category>
 				</Content>
 
 
-				{this.state.loading && <div className="loader"></div>}
+
 
 				<Content>
 					<div className="timeline">

@@ -56,34 +56,18 @@ function Register({ history, loginSuccess, popupStatus }) {
 			<Forms onSubmit={update} ref={formRef}>
 				<Input
 					name="name"
-					placeholder="Nome completo"
+					placeholder="Nome do Projeto"
 					className="login-input"
 					required />
 
 				<Input
-					name="phone"
-					placeholder="Celular (com DDD)"
-					className="login-input"
-					mask="(99)99999.9999"
-					required />
-
-				<Input
-					name="email"
-					type="email"
-					placeholder="Email"
-					className="login-input"
-					required />
-
-				<Input
-					name="password"
-					placeholder="Senha"
-					className="login-input"
-					type="password"
+					name="info"
+					placeholder="Fale de seu projeto para nós e possivéis apoiadores"
+					type="text"
 					required />
 
 
-
-				<FormButton type="submit" className="login-input" bg="#0466B9">{!loading ? 'Criar conta' : 'Carregando...'}</FormButton>
+				<FormButton type="submit" className="login-input" bg="#0466B9">{!loading ? 'Criar projeto' : 'Carregando...'}</FormButton>
 			</Forms>
 
 

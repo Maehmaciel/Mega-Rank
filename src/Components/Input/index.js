@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import { useField } from '@unform/core';
 
-import { Container, Info, Erro } from './styles';
+import { Container, Info, Erro, ContainerText } from './styles';
 
-export default function Input({ name, placeholder,plmask,...rest }) {
+export default function Input({ name, placeholder, plmask, ...rest }) {
   const inputRef = useRef(null);
   const { fieldName, defaultValue = '', registerField, error } = useField(name);
 
@@ -16,12 +16,16 @@ export default function Input({ name, placeholder,plmask,...rest }) {
   }, [fieldName, registerField]);
 
   return (
+
     <>
-    <Info>{placeholder}</Info>
-    <Container ref={inputRef} defaultValue={defaultValue} placeholder={plmask} {...rest} />
-    <Erro>{error}</Erro>
+      <Info>{placeholder}</Info>
+      {rest.type === 'text' ? <ContainerText ref={inputRef} defaultValue={defaultValue} placeholder={plmask} {...rest} /> :
+        <Container ref={inputRef} defaultValue={defaultValue} placeholder={plmask} {...rest} />
+      }
+
+      <Erro>{error}</Erro>
     </>
-  
-  
+
+
   )
 }

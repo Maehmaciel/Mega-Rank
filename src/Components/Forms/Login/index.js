@@ -21,14 +21,16 @@ const Login = ({ loginSuccess, popupStatus, history }) => {
 
 	const signin = async (credentials) => {
 		try {
-			const { data } = await api.post('/auth', credentials)
+			console.log(credentials)
+			const { data } = await api.post('/login', credentials)
 			if (data.error) {
 				setError(data.error)
 				return
 			}
-			popupStatus({ name: 'notify', information: 'Bem vindo' })
-			loginSuccess(data)
-			history.push('/')
+			console.log(data)
+			// popupStatus({ name: 'notify', information: 'Bem vindo' })
+			// loginSuccess(data)
+			// history.push('/')
 		} catch (error) {
 			console.log(error)
 			setError("Opa, ocorreu um erro na requisiçao, tente novamente mais tarde")
@@ -42,11 +44,10 @@ const Login = ({ loginSuccess, popupStatus, history }) => {
 			<Title>Acesse sua conta</Title>
 			{error && <Error>{error}</Error>}
 
-			<Forms islogin="true" onSubmit={signin}>
+			<Forms onSubmit={signin}>
 				<Input
-					name="cpf"
-					mask="999.999.999-99"
-					placeholder="CPF"
+					name="email"
+					placeholder="Email"
 					required />
 				<Input
 					name="password"
@@ -54,11 +55,8 @@ const Login = ({ loginSuccess, popupStatus, history }) => {
 					type="password"
 					required />
 				<TextButton to="/register" >Esqueceu sua senha?</TextButton>
-				<div style={{ display: 'flex', alignItems: 'center' }}>
-					<FormButton type="submit" bg="#0995C6">Acessar</FormButton>
-					<span className="or">ou</span>
-					<FormButton bg="#0995C6">Acesse pelo aplicativo</FormButton>
-				</div>
+
+				<FormButton type="submit" bg="#0995C6">Acessar</FormButton>
 
 			</Forms>
 

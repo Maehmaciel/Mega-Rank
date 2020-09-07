@@ -11,18 +11,9 @@ export const Header = styled.header`
 	display:flex;
 	width:100%;
 	height:80px;
+	background: #F1F3F6;
+	box-shadow: 0 4px 2px -2px gray;
 	box-shadow: 0px 3px 30px #C4D3EBFD;
-	align-items:center;
-	justify-content:space-between;
-	padding:0px 20px;
-	background-color: #24292e;
-	
-`;
-export const Logo = styled.img`
-
-	
-	height:80%;
-	
 	
 `;
 

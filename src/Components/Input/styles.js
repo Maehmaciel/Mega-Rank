@@ -18,6 +18,25 @@ export const Container = styled(InputMask)`
 		border: 2px solid #0995C6;
 	}
 `;
+
+export const ContainerText = styled.textarea`
+	padding: 15px 16px 14px 16px;
+	height:500px;
+	margin-top: 8px;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 150%;
+	color: #090C00;
+	background: #FFFFFF;
+	border: 2px solid #DFDFDF;
+	box-sizing: border-box;
+	border-radius: 4px;
+
+	:focus{
+		border: 2px solid #0995C6;
+	}
+`;
 export const Info = styled.span`
 	margin-top:16px;
 	font-style: normal;
