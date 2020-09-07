@@ -23,19 +23,21 @@ const Login = ({ loginSuccess, popupStatus, history }) => {
 		try {
 			console.log(credentials)
 			const { data } = await api.post('/login', credentials)
+
 			if (data.error) {
 				setError(data.error)
 				return
 			}
-			console.log(data)
+			let token = data.token
 			const config = {
-				headers: { Authorization: `Bearer ${data.token}` }
+				headers: { Authorization: `Bearer ${token}` }
 			};
 			const request = await api.get('/users', config)
 			const user = request.data
 			console.log(user)
 			popupStatus({ name: 'notify', information: 'Bem vindo' })
-			loginSuccess({ data.token, user })
+
+			loginSuccess({ token, user })
 			history.push('/')
 		} catch (error) {
 			console.log(error)
