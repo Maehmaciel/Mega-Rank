@@ -14,11 +14,17 @@ function Help() {
 	const [cursos, setCursos] = useState([
 		{
 			nome: "Empreendedorismo",
-			links: ["https://www.youtube.com/embed/im7ct31o35c", "https://www.youtube.com/embed/4Y-tjhZvCQg"]
+			links: ["https://www.youtube.com/embed/im7ct31o35c", "https://www.youtube.com/embed/4Y-tjhZvCQg", "https://www.youtube.com/embed/OZxxhT6WnwU"]
 		},
 		{
 			nome: "Como montar uma Startup",
 			links: ["https://www.youtube.com/embed/UU3G_JC_Y8s"]
+		},
+		{
+			nome: "Programação",
+			links: ["https://www.youtube.com/embed/2kSrMCQxhOI",
+				"https://www.youtube.com/embed/Q1iPPkAk_Ho",
+				"https://www.youtube.com/embed/jyjdXFsQoYw", "https://www.youtube.com/embed/Ptbk2af68e8"]
 		}
 	])
 

@@ -8,7 +8,7 @@ export const Container = styled(Link)`
 		padding: 8px 16px;
 		border-radius: 4px;
 		background: #0995C6;
-			
+		margin:5px;
 	&:active{
 	opacity:0.8;
 	}
@@ -16,6 +16,7 @@ export const Container = styled(Link)`
 	&:hover{
 	opacity:0.8;
 	}
+
 	`}
 	${(props) =>
 		props.size === 'image' &&
