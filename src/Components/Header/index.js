@@ -9,11 +9,14 @@ const Header = ({ children, user, title }) => {
 
   return (
     <Container>
-      <Logo src={logo} />
+      <Link to="/" size="image">
+        <Logo src={logo} />
+      </Link>
+
       <Title>{title}</Title>
       {user.username ? (<User>Bem Vinda, {user.username}</User>) : (<div>
-        <Link to="/login" size="xsmall">Login</Link>
-        <Link to="/register" size="xsmall">Cadastro</Link>
+        <Link to="/login" text="Login" size="xsmall"></Link>
+        <Link to="/register" text="Cadastro" size="xsmall"></Link>
       </div>)}
 
     </Container>

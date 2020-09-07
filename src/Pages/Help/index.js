@@ -4,7 +4,7 @@ import { bindActionCreators } from "redux";
 
 import * as actions from '../../store/actions/project';
 
-import { Container, Curso, Content } from './styles';
+import { Container, Links, Content, Title, Curso } from './styles';
 
 
 import Cursos from '../../Components/Cursos';
@@ -25,23 +25,23 @@ function Help() {
 
 	return (
 		<Container>
-			<Header />
+			<Header title="cursos" />
 
 			<Content>
 				{
 					cursos.map((curso, index) => {
 						return (
-							<div key={index}>
-								<h2>{curso.nome}</h2>
-								<Curso>
+							<Curso key={index}>
+								<Title>{curso.nome}</Title>
+								<Links>
 									{
 										curso.links.map((link, i) => {
 											return <Cursos key={i}>{link}</Cursos>
 										})
 
 									}
-								</Curso>
-							</div>)
+								</Links>
+							</Curso>)
 					})
 
 				}

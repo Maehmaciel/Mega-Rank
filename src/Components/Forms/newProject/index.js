@@ -43,7 +43,7 @@ function Register({ history, loginSuccess, popupStatus }) {
 
 	return (
 		<Container >
-			<Title>Cadastro</Title>
+			<Title>Cadastro de Projeto</Title>
 			{error && <Error>{error}</Error>}
 
 			<Forms onSubmit={update} ref={formRef}>

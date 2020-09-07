@@ -22,7 +22,7 @@ export const Content = styled.div`
 	flex:1;
 	display:flex;
 	flex-wrap:wrap;
-	justify-content:center;
+	
 `;
 export const Category = styled.div`
 	display:flex;

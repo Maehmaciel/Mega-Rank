@@ -1,32 +1,14 @@
 import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom'
 export const Container = styled(Link)`
-	background: #0995C6;
-	border-radius: 5px;
+	
 	${(props) =>
 		props.size === 'xsmall' &&
 		css`
 		padding: 8px 16px;
 		border-radius: 4px;
-	`}
-	${(props) =>
-		props.size === 'small' &&
-		css`
-		padding: 12px 24px;
-	`}
-	${(props) =>
-		props.size === 'medium' &&
-		css`
-		padding: 16px 32px;
-	`}
-	${(props) =>
-		props.size === 'big' &&
-		css`
-		padding: 16px 72px;
-		width: 276px;
-		height: 56px;
-	`}
-
+		background: #0995C6;
+			
 	&:active{
 	opacity:0.8;
 	}
@@ -34,6 +16,15 @@ export const Container = styled(Link)`
 	&:hover{
 	opacity:0.8;
 	}
+	`}
+	${(props) =>
+		props.size === 'image' &&
+		css`
+		height:80px;
+		display:flex;
+		align-items:center;
+	`}
+
 	
 
 	

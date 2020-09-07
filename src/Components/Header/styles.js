@@ -12,23 +12,18 @@ export const Container = styled.header`
 	
 `;
 export const Logo = styled.img`
-
-	
-	height:80%;
-	
-	
+	height:80%;	
 `;
 export const User = styled.span`
-
-	
 	color:#FFF;
-	
 `;
 export const Title = styled.h1`
-
-	
 	color:#FFF;
-	
+	@media (max-width: 660px) {
+
+		font-size:15px;
+		
+	}
 `;
 
 

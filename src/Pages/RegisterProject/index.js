@@ -17,7 +17,7 @@ function RegisterProjects({ history }) {
 
 	return (
 		<Container>
-			<Header />
+			<Header title="Receba Apoio" />
 
 			<Content>
 				<Register history={history} />

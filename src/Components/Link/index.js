@@ -2,11 +2,11 @@ import React from 'react';
 
 import { Container, Text } from './styles';
 
-const Link = ({ size, children, to, click }) => (
+const Link = ({ size, text, children, to, click }) => (
 	<Container size={size} to={to} onClick={click}>
-		<Text>
-			{children}
-		</Text>
+		{text ? <Text>
+			{text}
+		</Text> : children}
 	</Container>
 );
 
