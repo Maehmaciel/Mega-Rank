@@ -10,18 +10,18 @@
 }
 
 html {
-	height: 100%;
+	height: 100vh;
 }
 
 body {
-	height: 100%;
-	width: 100%;
+	height: 100vh;
+	width: 100vw;
 	background: #AFBFDD;
 	font-family: 'Roboto', sans-serif;
 }
 
 #root {
-	height: 100%;
+	height: 100vh;
 }
 
 .regular {

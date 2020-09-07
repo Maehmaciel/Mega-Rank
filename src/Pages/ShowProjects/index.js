@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
@@ -21,7 +21,6 @@ function ShowProjects({ project }) {
 			<Content>
 				{project &&
 					project.project.map(p => {
-						console.log(p)
 						return <Project key={p.id}>{p}</Project>
 					})
 

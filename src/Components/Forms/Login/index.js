@@ -16,12 +16,13 @@ import Input from '../../Input'
 
 import api from '../../../services/api'
 
-const Login = ({ loginSuccess, popupStatus, history }) => {
+const Login = ({ loginSuccess, popupStatus, history, logout }) => {
 	const [error, setError] = useState('')
 
 	const signin = async (credentials) => {
+
 		try {
-			console.log(credentials)
+			logout()
 			const { data } = await api.post('/login', credentials)
 
 			if (data.error) {
@@ -33,10 +34,7 @@ const Login = ({ loginSuccess, popupStatus, history }) => {
 				headers: { Authorization: `Bearer ${token}` }
 			};
 			const request = await api.get('/users', config)
-			const user = request.data
-			console.log(user)
-			popupStatus({ name: 'notify', information: 'Bem vindo' })
-
+			const user = request.data[0]
 			loginSuccess({ token, user })
 			history.push('/')
 		} catch (error) {

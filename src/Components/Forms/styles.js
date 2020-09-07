@@ -3,31 +3,35 @@ import { Form } from '@unform/web';
 import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
-	background: #fff;
 	display: flex;
 	flex-direction: column;
-	align-items: flex-start;
-	justify-content: flex-start;
 	border-radius: 6px;
 	font-size: 28px;
 	color: #0466B9;
-	width:100%;
-
-
-	@media (max-width: 660px) {
-		font-size: 22px;
-		padding: 20px;
+	max-width:25vw;
+	padding: 20px;
+	@media (max-width: 1200px) {
+		max-width:35vw;
+		
+		
+	}
+	@media (max-width: 1000px) {
+		max-width:50vw;
+		
+		
+	}
+	@media (max-width: 800px) {
+		max-width:80vw;
+		
+		
 	}
 `;
 
 export const Forms = styled(Form)`
-	${(props) =>
-		!props.islogin &&
-		css`
-		width: 384px;
-	`}
+
 	display: flex;
 	flex-direction: column;
+	width:100%;
 `;
 export const Button = styled.div`
 	background: #0466B9;

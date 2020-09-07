@@ -13,9 +13,12 @@ import Header from '../../Components/Header';
 function Help() {
 	const [cursos, setCursos] = useState([
 		{
-			id: 1,
 			nome: "Empreendedorismo",
-			links: ["https://www.youtube.com/embed/im7ct31o35c"]
+			links: ["https://www.youtube.com/embed/im7ct31o35c", "https://www.youtube.com/embed/4Y-tjhZvCQg"]
+		},
+		{
+			nome: "Como montar uma Startup",
+			links: ["https://www.youtube.com/embed/UU3G_JC_Y8s"]
 		}
 	])
 
@@ -26,32 +29,12 @@ function Help() {
 
 			<Content>
 				{
-					cursos.map(curso => {
+					cursos.map((curso, index) => {
 						return (
-							<div key={curso.id}>
-								<p>{curso.nome}</p>
+							<div key={index}>
+								<h2>{curso.nome}</h2>
 								<Curso>
 									{
-										curso.links.map((link, i) => {
-											return <Cursos key={i}>{link}</Cursos>
-										})
-
-									}{
-										curso.links.map((link, i) => {
-											return <Cursos key={i}>{link}</Cursos>
-										})
-
-									}{
-										curso.links.map((link, i) => {
-											return <Cursos key={i}>{link}</Cursos>
-										})
-
-									}{
-										curso.links.map((link, i) => {
-											return <Cursos key={i}>{link}</Cursos>
-										})
-
-									}{
 										curso.links.map((link, i) => {
 											return <Cursos key={i}>{link}</Cursos>
 										})
@@ -62,32 +45,7 @@ function Help() {
 					})
 
 				}
-				{
-					cursos.map(curso => {
-						return (
-							<div key={curso.id}>
-								<p>{curso.nome}</p>
-								{
-									curso.links.map((link, i) => {
-										return <Cursos key={i}>{link}</Cursos>
-									})
-								}</div>)
-					})
 
-				}
-				{
-					cursos.map(curso => {
-						return (
-							<div key={curso.id}>
-								<p>{curso.nome}</p>
-								{
-									curso.links.map((link, i) => {
-										return <Cursos key={i}>{link}</Cursos>
-									})
-								}</div>)
-					})
-
-				}
 			</Content>
 
 

@@ -26,18 +26,13 @@ function Register({ history, loginSuccess, popupStatus }) {
 	const update = async (info) => {
 		setLoading(true)
 		try {
-			const response = await api.post('/user', info)
-			if (response.data.error) {
-				setError(response.data.error)
-				return
-			}
-			const { data } = await api.post('/auth', { email: info.email, password: info.password })
+			const { data } = await api.post('/users', info)
 			if (data.error) {
 				setError(data.error)
 				return
 			}
-			popupStatus({ name: 'notify', information: 'Bem vindo' })
-			loginSuccess(data)
+			const { token, ...user } = data
+			loginSuccess({ token, user })
 			history.push('/')
 
 
@@ -55,7 +50,7 @@ function Register({ history, loginSuccess, popupStatus }) {
 
 			<Forms onSubmit={update} ref={formRef}>
 				<Input
-					name="name"
+					name="username"
 					placeholder="Nome completo"
 					className="login-input"
 					required />

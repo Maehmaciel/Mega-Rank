@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
@@ -17,7 +17,7 @@ import conversation from '../../assets/svg/003-conversation.svg'
 import registration from '../../assets/svg/004-registration.svg'
 import question from '../../assets/svg/005-question.svg'
 
-import Timeline from '../../Components/Timeline';
+
 
 function Home({ projectData }) {
 	useEffect(() => {

@@ -7,13 +7,9 @@ export const loginSuccess = ({ token, user }) => ({
 	}
 })
 
-export const logout = ({ user, token }) => ({
+export const logout = () => ({
 	type: 'LOGOUT',
-	payload: {
-		user,
-		token,
 
-	}
 })
 export const updateUser = (user) => ({
 	type: 'UPDATE_USER',

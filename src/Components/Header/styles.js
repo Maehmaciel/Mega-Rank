@@ -18,4 +18,10 @@ export const Logo = styled.img`
 	
 	
 `;
+export const User = styled.span`
+
+	
+	color:#FFF;
+	
+`;
 

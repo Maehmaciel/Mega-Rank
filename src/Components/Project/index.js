@@ -9,7 +9,7 @@ const Cursos = ({ children }) => {
       <Container>
 
         <ItemText>{children.name}</ItemText>
-        <ItemText>{children.Cursos}</ItemText>
+        <ItemText>{children.project}</ItemText>
       </Container>
     </>
 
