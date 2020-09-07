@@ -33,6 +33,7 @@ const Login = ({ loginSuccess, popupStatus, history }) => {
 			};
 			const request = await api.get('/users', config)
 			const user = request.data
+			console.log(user)
 			popupStatus({ name: 'notify', information: 'Bem vindo' })
 			loginSuccess({ token, user })
 			history.push('/')
