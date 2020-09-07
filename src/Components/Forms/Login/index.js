@@ -35,7 +35,7 @@ const Login = ({ loginSuccess, popupStatus, history }) => {
 			const user = request.data
 			console.log(user)
 			popupStatus({ name: 'notify', information: 'Bem vindo' })
-			loginSuccess({ token, user })
+			loginSuccess({ data.token, user })
 			history.push('/')
 		} catch (error) {
 			console.log(error)
