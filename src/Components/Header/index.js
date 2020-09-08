@@ -5,6 +5,7 @@ import { bindActionCreators } from "redux";
 import { Container, Logo, User, Title } from './styles'
 import Link from '../Link'
 import logo from '../../assets/logo.png'
+import Popup from '../PopUp'
 const Header = ({ children, user, title }) => {
 
   return (
@@ -12,7 +13,7 @@ const Header = ({ children, user, title }) => {
       <Link to="/" size="image">
         <Logo src={logo} />
       </Link>
-
+      <Popup />
       <Title>{title}</Title>
       {user.username ? (<User>Bem Vinda, {user.username}</User>) : (<div>
         <Link to="/login" text="Login" size="xsmall"></Link>

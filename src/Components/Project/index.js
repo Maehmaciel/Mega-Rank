@@ -7,19 +7,28 @@ import { Container, ItemText, ItemTitle, SupportText } from './styles'
 import api from '../../services/api'
 import Support from '../../Pages/Support';
 
-const Project = ({ history, children, supportable, projectData, popupStatus }) => {
-  async function support(id) {
+const Project = ({ history, children, supportable, projectData, popupStatus, user }) => {
+  async function support(id, userSupporters) {
+    let supporters = []
     try {
-      popupStatus({ name: 'notify', information: 'Bem vindo' })
-      await api.put(`/projects/${id}`)
+      userSupporters.map(sup => {
+        supporters.push(sup.id)
+        if (user == sup.id) {
+          popupStatus({ name: 'notify', information: 'Você já apoiou este projeto' })
+          history.push("/support")
+        }
 
+
+      })
+      await api.put(`/projects/${id}`, { supporters })
+      popupStatus({ name: 'notify', information: 'Obrigado por apoiar este projeto' })
 
       const { data } = await api.get('/home')
       projectData({
         project: data
       })
 
-      history.pushState("/support")
+      history.push("/support")
 
     } catch (error) {
       console.log(error)
@@ -28,7 +37,7 @@ const Project = ({ history, children, supportable, projectData, popupStatus }) =
   }
   return (
     <>
-      <Container support={supportable} onClick={() => { supportable && support(children.id) }}>
+      <Container support={supportable} onClick={() => { supportable && support(children.id, children.supporters) }}>
 
         <ItemTitle>{children.name}</ItemTitle>
         <SupportText>Esse Projeto foi apoiado: {children.supporters.length} x</SupportText>
@@ -44,7 +53,8 @@ const Project = ({ history, children, supportable, projectData, popupStatus }) =
 
 const mapStateToProps = state => ({
   project: state.project,
-  popup: state.popup
+  popup: state.popup,
+  user: state.login.user.id
 });
 
 const mapDispatchToProps = dispatch =>

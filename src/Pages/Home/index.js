@@ -43,13 +43,13 @@ function Home({ projectData }) {
 			<Header />
 			<Content>
 				<Category>
-					<Option name="Apoie" to="/support" image={community}></Option>
+					<Option name="Apoie" popup="Escolha um projeto para apoiar (Nescessário Login)" to="/support" image={community}></Option>
 
-					<Option name="Conheça os projetos" to="/projects" image={conversation}></Option>
+					<Option name="Conheça os projetos" popup="Conheça os projetos Cadastrados" to="/projects" image={conversation}></Option>
 				</Category>
 				<Category>
-					<Option name="Cadastre um projeto" to="/newProject" image={registration}></Option>
-					<Option name="Quero uma ajuda para começar" to="/help" image={question}></Option>
+					<Option name="Cadastre um projeto" popup="Faça seu cadastro e nos conte seu projeto" to="/newProject" image={registration}></Option>
+					<Option name="Quero uma ajuda para começar" popup="Quer empreender e não sabe por onde começar? Vem com a gente!" to="/help" image={question}></Option>
 				</Category>
 			</Content>
 
