@@ -38,7 +38,6 @@ const Login = ({ loginSuccess, popupStatus, history, logout }) => {
 			loginSuccess({ token, user })
 			history.push('/')
 		} catch (error) {
-			console.log(error)
 			setError("Opa, ocorreu um erro na requisiçao, tente novamente mais tarde")
 		}
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
@@ -8,6 +8,7 @@ import api from '../../services/api'
 import Support from '../../Pages/Support';
 
 const Project = ({ history, children, supportable, projectData, popupStatus, user }) => {
+  const [apoiado, setApoiado] = useState(false)
   async function support(id, userSupporters) {
     let supporters = []
     try {
@@ -15,20 +16,23 @@ const Project = ({ history, children, supportable, projectData, popupStatus, use
         supporters.push(sup.id)
         if (user == sup.id) {
           popupStatus({ name: 'notify', information: 'Você já apoiou este projeto' })
-          history.push("/support")
+          setApoiado(true)
         }
 
 
       })
-      await api.put(`/projects/${id}`, { supporters })
-      popupStatus({ name: 'notify', information: 'Obrigado por apoiar este projeto' })
+      if (!apoiado) {
+        await api.put(`/projects/${id}`, { supporters })
+        popupStatus({ name: 'notify', information: 'Obrigado por apoiar este projeto' })
 
-      const { data } = await api.get('/home')
-      projectData({
-        project: data
-      })
+        const { data } = await api.get('/home')
+        projectData({
+          project: data
+        })
 
-      history.push("/support")
+        history.push("/support")
+      }
+
 
     } catch (error) {
       console.log(error)
