@@ -6,7 +6,7 @@ import { Container, Logo, User, Title } from './styles'
 import Link from '../Link'
 import logo from '../../assets/logo.png'
 import Popup from '../PopUp'
-const Header = ({ children, user, title }) => {
+const Header = ({ children, user, title, logout }) => {
 
   return (
     <Container>
@@ -14,8 +14,8 @@ const Header = ({ children, user, title }) => {
         <Logo src={logo} />
       </Link>
       <Popup />
-      <Title>{title}</Title>
-      {user.username ? (<User>Bem Vinda, {user.username}</User>) : (<div>
+      <Title >{title}</Title>
+      {user.username ? (<User onClick={() => { logout() }}>Bem Vinda, {user.username}</User>) : (<div>
         <Link to="/login" text="Login" size="xsmall"></Link>
         <Link to="/register" text="Cadastro" size="xsmall"></Link>
       </div>)}

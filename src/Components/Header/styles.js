@@ -14,8 +14,10 @@ export const Container = styled.header`
 export const Logo = styled.img`
 	height:80%;	
 `;
-export const User = styled.span`
+export const User = styled.button`
 	color:#FFF;
+	cursor:pointer;
+	background:transparent;
 `;
 export const Title = styled.h1`
 	color:#FFF;
